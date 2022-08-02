@@ -1,7 +1,7 @@
 import React from "react";
 // import Banner from "../components/Banner";
 import NavBar from "../components/NavBar";
-import Card from "../components/Card";
+import CardPokemon from "../components/CardPokemon";
 import getPokemonList from "../services/pokemonListCard";
 import { useState } from "react";
 import { useEffect } from "react";

@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "./Card";
+import CardPokemon from "./CardPokemon";
 
 const PokemonList = ({ pokemonList }) => {
   return (
     <div>
-      {pokemonList && pokemonList.map((pokemon) => <Card pokemon={pokemon} />)}
+      {pokemonList &&
+        pokemonList.map((pokemon) => <CardPokemon pokemon={pokemon} />)}
     </div>
   );
 };
