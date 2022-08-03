@@ -30,14 +30,8 @@ function PokemonList(props) {
             />
 
             <ul>
-              <h2>Statistiques</h2>
-              <li>Ses statistiques (HP, Attaque, Defense, Vitesse, …)</li>
-              <h2></h2>
-              <li>Le/les types auxquel il appartient (feu, terre, eau, …)</li>
-              <li>Une description</li>
-              <li>Une description</li>
-              <li>Ses évolutions</li>
-              <li>
+              <h2>Attacks</h2>
+              <li className={style.cardMoves}>
                 {pokemon.stats.map((stat) => {
                   return (
                     <p key={stat.stat.name}>
@@ -45,7 +39,17 @@ function PokemonList(props) {
                     </p>
                   );
                 })}
-              </li>
+              </li>{" "}
+              <h2>Type</h2>
+              <li className={style.cardMoves}>
+                {pokemon.stats.map((types) => {
+                  return (
+                    <p key={types.stat.name}>
+                      {types.stat.name} = {types.effort}{" "}
+                    </p>
+                  );
+                })}
+              </li>{" "}
             </ul>
 
             <div className={style.containerBtn}>
