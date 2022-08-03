@@ -15,7 +15,7 @@ function Home(props) {
   const [data, setData] = useState();
 
   const pokemonsList = usePokemons();
-  console.log(pokemonsList);
+  //console.log(pokemonsList);
 
   return (
     <div>

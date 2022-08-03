@@ -10,7 +10,7 @@ function CardPokemon({ pokemon }) {
 
   const getId = (url) => {
     const splittedUrl = url.split("/");
-    console.log(splittedUrl);
+    // console.log(splittedUrl);
     const id = splittedUrl[6];
     return id;
   };
@@ -47,7 +47,7 @@ export default CardPokemon;
 
 function getImagebyId(url) {
   const splittedUrl = url.split("/");
-  console.log(splittedUrl);
+  // console.log(splittedUrl);
 
   const id = splittedUrl[6];
   const urlImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`;
