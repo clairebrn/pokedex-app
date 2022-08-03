@@ -10,15 +10,35 @@
   padding: 10px;
   border-radius: 10px;
 }
+.styleCard h1 {
+  text-transform: uppercase;
+}
 
 .imgSize {
   width: 150px;
+  max-height: 150px;
 }
 
 .containerBtn {
-  background-color: red;
+  margin-top: 20px;
 }
 
-.styleCard h1 {
-  text-transform: uppercase;
+.btn {
+  background-color: red;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  color: yellow;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: yellow;
+  color: red;
+  border: 1px solid red;
+  font-size: 23px;
 }
