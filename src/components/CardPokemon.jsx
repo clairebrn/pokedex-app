@@ -20,7 +20,6 @@ function CardPokemon({ pokemon }) {
       <div>
         <h1>{pokemon.name}</h1>
       </div>
-
       <div>
         <Link to={`/pokemonList/${getId(pokemon.url)}`}>
           <img src={img} alt={pokemon.name} className={style.imgSize} />
@@ -33,13 +32,6 @@ function CardPokemon({ pokemon }) {
         </Link>
       </div>
     </div>
-    // <div className="styleCard">
-    //   <Card>
-    //     {/* <Card> */}
-    //     <Card.Img src={img} />
-    //     <Card.Header as="h2">{pokemon.name}</Card.Header>
-    //   </Card>
-    // </div>
   );
 }
 

@@ -8,7 +8,7 @@ function CollapsibleExample() {
     // <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <NavbarBrand href="/home">
+        <NavbarBrand href="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
             alt=""
@@ -20,7 +20,7 @@ function CollapsibleExample() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/pokemonList">Pokemon détail</Nav.Link>
+            {/* <Nav.Link href="/pokemonList">Pokemon détail</Nav.Link> */}
             <Nav.Link href="/pokedex">Pokedex</Nav.Link>
           </Nav>
         </Navbar.Collapse>

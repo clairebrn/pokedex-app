@@ -11,14 +11,16 @@ function PokemonList(props) {
   console.log("yo", pokemon);
 
   return (
-    <div>
+    <div className={style.pokemonDetailPage}>
       <NavBar />
       <div className={style.container}>
         {!pokemon ? (
           <div>404</div>
         ) : (
           <div>
-            <h1>{pokemon.name}</h1>
+            <div className={style.nomPokemon}>
+              <h1>{pokemon.name}</h1>
+            </div>
 
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
@@ -28,7 +30,9 @@ function PokemonList(props) {
             />
 
             <ul>
+              <h2>Statistiques</h2>
               <li>Ses statistiques (HP, Attaque, Defense, Vitesse, …)</li>
+              <h2></h2>
               <li>Le/les types auxquel il appartient (feu, terre, eau, …)</li>
               <li>Une description</li>
               <li>Une description</li>
@@ -44,9 +48,11 @@ function PokemonList(props) {
               </li>
             </ul>
 
-            <Link to={`/pokedex`}>
-              <button>Ajouter</button>
-            </Link>
+            <div className={style.containerBtn}>
+              <Link to={`/pokedex`}>
+                <button className={style.btn}>Ajouter</button>
+              </Link>
+            </div>
           </div>
         )}
       </div>
