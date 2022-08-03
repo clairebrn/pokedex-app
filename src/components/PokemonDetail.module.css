@@ -1,23 +1,16 @@
-.styleCard {
+.container {
   background-color: grey;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 300px;
-  margin: 10px;
+  /* height: 300px; */
+  height: auto;
+  margin: 30px;
   padding: 10px;
   border-radius: 10px;
 }
 
 .imgSize {
   width: 150px;
-}
-
-.containerBtn {
-  background-color: red;
-}
-
-.styleCard h1 {
-  text-transform: uppercase;
 }

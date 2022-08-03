@@ -1,28 +1,45 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
+import usePokemons from "../services/pokemonListCard";
 import style from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 function CardPokemon({ pokemon }) {
   const img = getImagebyId(pokemon.url);
   // console.log(pokemon);
+
+  const getId = (url) => {
+    const splittedUrl = url.split("/");
+    console.log(splittedUrl);
+    const id = splittedUrl[6];
+    return id;
+  };
+
   return (
-    // <div className={style.styleCard}>
-    //   <h1>{pokemon.name}</h1>
-    //   <img src={img} alt={pokemon.name} />
-    // </div>
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={img} />
-        <Card.Body>
-          <Card.Title>{pokemon.name}</Card.Title>
-          {/* <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text> */}
-          {/* <Button variant="primary">Go somewhere</Button> */}
-        </Card.Body>
-      </Card>
+    <div className={style.styleCard}>
+      <div>
+        <h1>{pokemon.name}</h1>
+      </div>
+
+      <div>
+        <Link to={`/pokemonList/${getId(pokemon.url)}`}>
+          <img src={img} alt={pokemon.name} className={style.imgSize} />
+        </Link>
+      </div>
+
+      <div className={style.containerBtn}>
+        <Link to={`/pokedex`}>
+          <button className={style.btn}>Ajouter</button>
+        </Link>
+      </div>
     </div>
+    // <div className="styleCard">
+    //   <Card>
+    //     {/* <Card> */}
+    //     <Card.Img src={img} />
+    //     <Card.Header as="h2">{pokemon.name}</Card.Header>
+    //   </Card>
+    // </div>
   );
 }
 

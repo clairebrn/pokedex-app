@@ -6,8 +6,11 @@ export default function usePokemons() {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+      const { data } = await axios.get(
+        "https://pokeapi.co/api/v2/pokemon/?limit=649"
+      );
       setPokemons(data.results);
+      console.log(data);
     }
     fetchData();
   }, []);

@@ -9,9 +9,9 @@ function App(props) {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/Pokedex" element={<Pokedex />} />
-          <Route path="/PokemonList" element={<PokemonList />} />
+          <Route path="/PokemonList/:id" element={<PokemonList />} />
         </Routes>
       </BrowserRouter>
     </div>
