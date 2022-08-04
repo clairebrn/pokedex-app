@@ -3,12 +3,28 @@ import NavBar from "../components/NavBar";
 import style from "../components/PokemonDetail.module.css";
 import { Link, useParams } from "react-router-dom";
 import PokemonDetail from "../services/pokemonDetailPage";
+import SpeciesDetail from "../services/speciesDetailPage";
 
 function PokemonList(props) {
   const { id } = useParams();
 
   const pokemon = PokemonDetail(id);
-  console.log("yo", pokemon);
+  // console.log("yo", pokemon);
+
+  const species = SpeciesDetail(id);
+  // console.log(species);
+
+  let description = "";
+
+  if (species) {
+    const result = species.flavor_text_entries.find((entry) => {
+      if (entry.language.name === "en" && entry.version.name === "omega-ruby")
+        return true;
+      else return false;
+    });
+
+    description = result.flavor_text;
+  }
 
   return (
     <div className={style.pokemonDetailPage}>
@@ -29,8 +45,12 @@ function PokemonList(props) {
               className={style.imgSize}
             />
 
+            <h2>Description</h2>
+
+            <p>{description}</p>
+
             <ul>
-              <h2>Attacks</h2>
+              <h2>Caractéristiques</h2>
               <li className={style.cardMoves}>
                 {pokemon.stats.map((stat) => {
                   return (
@@ -40,14 +60,13 @@ function PokemonList(props) {
                   );
                 })}
               </li>{" "}
-              <h2>Type</h2>
+            </ul>
+
+            <ul>
+              <h2>Types</h2>
               <li className={style.cardMoves}>
-                {pokemon.stats.map((types) => {
-                  return (
-                    <p key={types.stat.name}>
-                      {types.stat.name} = {types.effort}{" "}
-                    </p>
-                  );
+                {pokemon.types.map((type) => {
+                  return <p key={type.type.name}>{type.type.name}</p>;
                 })}
               </li>{" "}
             </ul>

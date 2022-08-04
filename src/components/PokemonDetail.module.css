@@ -30,10 +30,10 @@
   border-radius: 10px;
   border: 2px solid yellow;
 }
-.nomPokemon :hover {
+/* .nomPokemon :hover {
   color: black;
   text-shadow: -1px 5px 4px yellow;
-}
+} */
 
 .imgSize {
   width: 250px;

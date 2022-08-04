@@ -10,7 +10,9 @@ const PokemonList = ({ pokemonList }) => {
   return (
     <div className={style.hello}>
       {pokemonList &&
-        pokemonList.map((pokemon) => <CardPokemon pokemon={pokemon} />)}
+        pokemonList.map((pokemon) => (
+          <CardPokemon key={pokemon.name} pokemon={pokemon} />
+        ))}
     </div>
   );
 };
