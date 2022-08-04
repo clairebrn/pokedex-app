@@ -57,21 +57,21 @@ function PokemonList(props) {
               <p>{description}</p>
             </div>
             <div className={style.content}>
-              <p>type :</p>
-              {pokemon.types.map((type) => {
-                return <p key={type.type.name}>{type.type.name}</p>;
-              })}
-            </div>
-            <div className={style.content}>
+              <p>
+                {pokemon.types.map((type) => {
+                  return <p key={type.type.name}>Type : {type.type.name}</p>;
+                })}
+              </p>
               <p>Poids : {pokemon.weight}</p>
               <p>taille : {pokemon.height}</p>
             </div>
             <div className={style.content}>
-              <p>Capacité : </p>
               <p>
                 {pokemon.abilities.map((ability) => {
                   return (
-                    <p key={ability.ability.name}>{ability.ability.name}</p>
+                    <p key={ability.ability.name}>
+                      Capacité : {ability.ability.name}
+                    </p>
                   );
                 })}
               </p>

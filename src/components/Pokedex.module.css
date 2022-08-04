@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap");
+
+.containerFav {
+  background-color: red;
+  height: auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
 .styleCard {
-  background-color: blue;
-  border: 2px solid yellow;
+  background-color: yellow;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,15 +21,17 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: -1px 5px 4px black;
+  width: 20%;
 }
 .styleCard:hover {
   box-shadow: -5px 8px 4px black;
 }
 .styleCard h1 {
   text-transform: uppercase;
-  color: yellow;
+  color: red;
   font-family: "Fredoka One", cursive;
-  text-shadow: -1px 5px 1px black;
+  text-shadow: -1px 1px 1px black;
+  font-size: 20px;
 }
 
 .imgSize {
@@ -30,6 +43,7 @@
   margin-top: 20px;
 }
 
+/* bouton ajout */
 .btn {
   background-color: red;
   border: 2px solid yellow;
@@ -37,19 +51,17 @@
   color: yellow;
   padding: 5px;
   font-size: 18px;
-  /* text-decoration: none; */
-  display: inline-block;
   transition-duration: 0.4s;
   box-shadow: -1px 5px 4px black;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
   margin: 0px 0;
-  /* margin-top: 30px; */
+  margin-top: 30px;
   margin-bottom: 5px;
 }
 
 .btn:hover {
-  background-color: yellow;
+  background-color: blue;
   color: red;
   border: 1px solid red;
   font-size: 23px;
