@@ -10,7 +10,6 @@
   background-color: blue;
   height: auto;
 }
-
 .containerPokemon {
   text-align: center;
 }
@@ -40,6 +39,10 @@
   box-shadow: -1px 5px 4px black;
   /* opacity: 1; */
 }
+.sidebar:hover,
+.content:hover {
+  box-shadow: -5px 8px 4px black;
+}
 
 .sidebar {
   flex-basis: 55%;
@@ -49,6 +52,11 @@
   opacity: 0.8;
 } */
 
+/* détails */
+.content {
+  flex-basis: 35%;
+  background-color: red;
+}
 /* bouton ajout */
 .btn {
   background-color: red;
@@ -73,12 +81,6 @@
   font-size: 23px;
   font-weight: bold;
   text-shadow: -1px 2px 1px black;
-}
-
-/* détails */
-.content {
-  flex-basis: 35%;
-  background-color: red;
 }
 
 /* responsive */

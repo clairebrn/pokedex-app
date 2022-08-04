@@ -9,14 +9,16 @@
   margin: 30px;
   padding: 10px;
   border-radius: 10px;
+  box-shadow: -1px 5px 4px black;
 }
 .styleCard:hover {
-  box-shadow: -1px 5px 4px black;
+  box-shadow: -5px 8px 4px black;
 }
 .styleCard h1 {
   text-transform: uppercase;
   color: yellow;
-  text-shadow: -1px 5px 4px black;
+  font-family: "Fredoka One", cursive;
+  text-shadow: -1px 5px 1px black;
 }
 
 .imgSize {
