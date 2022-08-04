@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../components/NavBar";
 import style from "../components/PokemonDetail.module.css";
+
 import { Link, useParams } from "react-router-dom";
 import PokemonDetail from "../services/pokemonDetailPage";
 import SpeciesDetail from "../services/speciesDetailPage";
 
-function PokemonList(props) {
+function PokemonListNew(props) {
   const { id } = useParams();
-
   const pokemon = PokemonDetail(id);
-  // console.log("yo", pokemon);
-
   const species = SpeciesDetail(id);
-  // console.log(species);
 
   let description = "";
 
@@ -27,56 +24,39 @@ function PokemonList(props) {
   }
 
   return (
-    <div className={style.pokemonDetailPage}>
+    <div>
       <NavBar />
-      <div className={style.container}>
+
+      <div>
         {!pokemon ? (
           <div>404</div>
         ) : (
-          <div>
-            <div className={style.nomPokemon}>
-              <h1>{pokemon.name}</h1>
+          <div className={style.body}>
+            {/* ouverture de div */}
+            <div className={style.sidebar}>
+              <div className={style.containerPokemon}>
+                <div>
+                  <h1>{pokemon.name}</h1>
+                </div>
+
+                <div>
+                  <img
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+                    alt="nom du pokemon"
+                    className={style.imgSize}
+                  />
+                </div>
+
+                <div>
+                  <Link to={`/pokedex`}>
+                    <button className={style.btn}>Ajouter</button>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-              // src="https://www.pokebip.com/images/2022/199.png"
-              alt="nom du pokemon"
-              className={style.imgSize}
-            />
-            <h2>Description</h2>
-            <p>{description}</p>
-            <p>poids : {pokemon.weight}</p>
-            <p>taille : {pokemon.height}</p>
-            <p>
-              capacité :
-              {pokemon.abilities.map((ability) => {
-                return <p key={ability.ability.name}>{ability.ability.name}</p>;
-              })}
-            </p>
-            <ul>
-              <h2>Caractéristiques</h2>
-              <li className={style.cardMoves}>
-                {pokemon.stats.map((stat) => {
-                  return (
-                    <p key={stat.stat.name}>
-                      {stat.stat.name} = {stat.base_stat}{" "}
-                    </p>
-                  );
-                })}
-              </li>{" "}
-            </ul>
-            <ul>
-              <h2>Types</h2>
-              <li className={style.cardMoves}>
-                {pokemon.types.map((type) => {
-                  return <p key={type.type.name}>{type.type.name}</p>;
-                })}
-              </li>{" "}
-            </ul>
-            <div className={style.containerBtn}>
-              <Link to={`/pokedex`}>
-                <button className={style.btn}>Ajouter</button>
-              </Link>
+            {/* fermeture div */}
+            <div className={style.content}>
+              <p>bloc detail numéro un</p>
             </div>
           </div>
         )}
@@ -85,4 +65,4 @@ function PokemonList(props) {
   );
 }
 
-export default PokemonList;
+export default PokemonListNew;

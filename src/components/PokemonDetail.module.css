@@ -1,51 +1,53 @@
-.pokemonDetailPage {
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+.body {
+  line-height: 1.8;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background-color: blue;
-  height: 1080px;
-  width: auto;
+  height: auto;
 }
-.container {
+
+.containerPokemon {
+  text-align: center;
+}
+
+.containerPokemon img {
+  flex-basis: 50%;
+}
+.containerPokemon h1 {
+  text-transform: uppercase;
+  color: yellow;
+  font-family: "Fredoka One", cursive;
+  text-shadow: -1px 5px 1px black;
+}
+.containerPokemon h1:hover {
+  text-shadow: -1px 5px 1px black;
+}
+
+.sidebar,
+.content {
+  margin: 10px;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
   background-color: red;
   border-radius: 10px;
   border: 2px solid yellow;
-  display: flex;
-  /* flex-direction: column;
-  align-items: center; */
-  /* justify-content: space-between; */
-  flex-wrap: wrap;
-  height: auto;
-  width: 50%;
-  margin: 50px;
-  padding: 20px;
+  box-shadow: -1px 5px 4px black;
+  opacity: 1;
 }
 
-.container h1 {
-  text-transform: uppercase;
-  text-align: center;
-  color: yellow;
-  text-shadow: -1px 5px 4px black;
-  margin: 10px 0;
+.sidebar {
+  flex-basis: 55%;
 }
-
-.nomPokemon {
-  border-radius: 10px;
-  border: 2px solid yellow;
-}
-/* .nomPokemon :hover {
-  color: black;
-  text-shadow: -1px 5px 4px yellow;
+/* .sidebar:hover,
+.content:hover {
+  opacity: 0.8;
 } */
-
-.imgSize {
-  width: 250px;
-  margin: 50px 0;
-}
-.imgSize:hover {
-  width: 300px;
-}
-
-.containerBtn {
-  margin-top: 20px;
-}
 
 .btn {
   background-color: red;
@@ -53,27 +55,37 @@
   border-radius: 10px;
   color: yellow;
   padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 28px;
+  font-size: 18px;
   transition-duration: 0.4s;
   box-shadow: -1px 5px 4px black;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+  margin: 0px 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .btn:hover {
   background-color: yellow;
-  color: blue;
+  color: red;
   border: 1px solid red;
-  font-size: 33px;
+  font-size: 23px;
   font-weight: bold;
-  border: 2px solid blue;
+  text-shadow: -1px 2px 1px black;
 }
 
-/* .cardMoves {
-  background-color: red;
-  border-radius: 10px;
-  border: 2px solid yellow;
-  height: 300px;
-  padding: 20px;
-} */
+.content {
+  flex-basis: 35%;
+  background-color: gray;
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    flex-basis: 100%;
+    order: 2;
+  }
+  .sidebar {
+    flex-basis: 100%;
+    order: 1;
+  }
+}
