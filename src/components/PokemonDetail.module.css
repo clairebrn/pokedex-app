@@ -38,7 +38,7 @@
   border-radius: 10px;
   border: 2px solid yellow;
   box-shadow: -1px 5px 4px black;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .sidebar {
@@ -49,6 +49,7 @@
   opacity: 0.8;
 } */
 
+/* bouton ajout */
 .btn {
   background-color: red;
   border: 2px solid yellow;
@@ -74,11 +75,13 @@
   text-shadow: -1px 2px 1px black;
 }
 
+/* détails */
 .content {
   flex-basis: 35%;
-  background-color: gray;
+  background-color: red;
 }
 
+/* responsive */
 @media screen and (max-width: 750px) {
   .content {
     flex-basis: 100%;

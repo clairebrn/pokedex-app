@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import PokemonDetail from "../services/pokemonDetailPage";
 import SpeciesDetail from "../services/speciesDetailPage";
 
-function PokemonListNew(props) {
+function PokemonList(props) {
   const { id } = useParams();
   const pokemon = PokemonDetail(id);
   const species = SpeciesDetail(id);
@@ -32,13 +32,12 @@ function PokemonListNew(props) {
           <div>404</div>
         ) : (
           <div className={style.body}>
-            {/* ouverture de div */}
+            {/* carte profil du pokemon (nom,img, btn) */}
             <div className={style.sidebar}>
               <div className={style.containerPokemon}>
                 <div>
                   <h1>{pokemon.name}</h1>
                 </div>
-
                 <div>
                   <img
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
@@ -46,7 +45,6 @@ function PokemonListNew(props) {
                     className={style.imgSize}
                   />
                 </div>
-
                 <div>
                   <Link to={`/pokedex`}>
                     <button className={style.btn}>Ajouter</button>
@@ -54,10 +52,43 @@ function PokemonListNew(props) {
                 </div>
               </div>
             </div>
-            {/* fermeture div */}
+            {/* descritpion du pokemon */}
             <div className={style.content}>
-              <p>bloc detail numéro un</p>
+              <p>{description}</p>
             </div>
+            <div className={style.content}>
+              <p>type :</p>
+              {pokemon.types.map((type) => {
+                return <p key={type.type.name}>{type.type.name}</p>;
+              })}
+            </div>
+            <div className={style.content}>
+              <p>Poids : {pokemon.weight}</p>
+              <p>taille : {pokemon.height}</p>
+            </div>
+            <div className={style.content}>
+              <p>Capacité : </p>
+              <p>
+                {pokemon.abilities.map((ability) => {
+                  return (
+                    <p key={ability.ability.name}>{ability.ability.name}</p>
+                  );
+                })}
+              </p>
+            </div>
+
+            <div className={style.content}>
+              <p>Caractéristiques : </p>
+              {pokemon.stats.map((stat) => {
+                return (
+                  <p key={stat.stat.name}>
+                    {stat.stat.name} = {stat.base_stat}{" "}
+                  </p>
+                );
+              })}
+            </div>
+
+            {/* fin du body */}
           </div>
         )}
       </div>
@@ -65,4 +96,4 @@ function PokemonListNew(props) {
   );
 }
 
-export default PokemonListNew;
+export default PokemonList;
