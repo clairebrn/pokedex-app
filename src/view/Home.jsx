@@ -18,7 +18,6 @@ function Home(props) {
 
   return (
     <div>
-      <NavBar />
       <div>
         {/* <input type="text" placeholder="Rechercher un pokemon.."></input> */}
       </div>

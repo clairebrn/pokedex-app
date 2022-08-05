@@ -54,11 +54,17 @@
 } */
 
 /* détails */
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
 .content {
   flex-basis: 35%;
   background-color: red;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  font-size: 12px;
   height: 10%;
   color: yellow;
   /* display: flex;
@@ -96,7 +102,7 @@
 @media screen and (max-width: 750px) {
   .content {
     flex-basis: 100%;
-    order: 2;
+    /* order: 2; */
   }
   .sidebar {
     flex-basis: 100%;

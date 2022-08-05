@@ -3,8 +3,15 @@ import React, { Component } from "react";
 import usePokemons from "../services/pokemonListCard";
 import style from "./Card.module.css";
 import { Link } from "react-router-dom";
+import { addToPokedex, removeFromPokedex } from "../reducers/pokedexReducer";
+import { useDispatch, useSelector } from "react-redux";
 
 function CardPokemon({ pokemon }) {
+  const { pokemons } = useSelector((state) => state.pokedex);
+  const isSelected = pokemons.find(
+    (pokemonElement) => pokemonElement.name === pokemon.name
+  );
+
   const img = getImagebyId(pokemon.url);
 
   const getId = (url) => {
@@ -13,21 +20,32 @@ function CardPokemon({ pokemon }) {
     return id;
   };
 
+  const dispatch = useDispatch();
+
+  const onToggleClick = () => {
+    const payload = { pokemon: pokemon };
+    if (isSelected) {
+      dispatch(removeFromPokedex(payload));
+    } else {
+      dispatch(addToPokedex(payload));
+    }
+  };
+
   return (
     //affichage des pokemon sur la page Home
     <div className={style.styleCard}>
       <div>
         <h1>{pokemon.name}</h1>
       </div>
-      <div>
-        <Link to={`/pokemonList/${getId(pokemon.url)}`}>
+      <Link to={`/pokemonList/${getId(pokemon.url)}`}>
+        <div>
           <img src={img} alt={pokemon.name} className={style.imgSize} />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div className={style.containerBtn}>
-        <Link to={`/pokedex`}>
-          <button className={style.btn}>Ajouter</button>
-        </Link>
+        <button className={style.btn} onClick={onToggleClick}>
+          {isSelected ? "Supprimer" : "Ajouter"}
+        </button>
       </div>
     </div>
   );
