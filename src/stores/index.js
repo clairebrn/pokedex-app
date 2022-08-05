@@ -1,15 +1,14 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import PokedexReducer from "../reducers/pokedexReducer";
+import PokemonReducer from "../reducers/pokemonReducer";
 
-console.log(PokedexReducer);
 const rootReducer = combineReducers({
   pokedex: PokedexReducer,
+  pokemon: PokemonReducer,
 });
 
 const store = configureStore({
   reducer: rootReducer,
 });
-
-console.log(store);
 
 export default store;

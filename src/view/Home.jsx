@@ -5,23 +5,34 @@ import getPokemonList from "../services/pokemonListCard";
 import { useState, useEffect } from "react";
 import usePokemons from "../services/pokemonListCard";
 import PokemonList from "../components/PokemonList";
+import { useDispatch, useSelector } from "react-redux";
+import { addAllPokemons } from "../reducers/pokemonReducer";
+import SearchBar from "../components/SearchBar";
 
-// import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
+function Home() {
+  const [search, setSearch] = useState(null);
 
-function Home(props) {
-  const [data, setData] = useState();
+  const dispatch = useDispatch();
+  const { allPokemons } = useSelector((state) => state.pokemon);
 
-  const pokemonsList = usePokemons();
-  //console.log(pokemonsList);
+  const pokemons = usePokemons();
+
+  if (pokemons) {
+    dispatch(addAllPokemons({ pokemons: pokemons }));
+  }
+
+  let pokemonResult = [];
+  if (search) {
+    pokemonResult = allPokemons.filter((pokemon) => {
+      return pokemon.name.includes(search);
+    });
+    // console.log(search);
+  }
 
   return (
     <div>
-      <div>
-        {/* <input type="text" placeholder="Rechercher un pokemon.."></input> */}
-      </div>
-      <PokemonList pokemonList={pokemonsList} />
+      <SearchBar setSearch={setSearch} />
+      <PokemonList pokemonList={search ? pokemonResult : allPokemons} />
     </div>
   );
 }

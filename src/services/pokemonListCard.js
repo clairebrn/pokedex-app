@@ -11,7 +11,6 @@ export default function usePokemons() {
         "https://pokeapi.co/api/v2/pokemon/?limit=649"
       );
       setPokemons(data.results);
-      // console.log("pokemonListCard.js", data);
     }
     fetchData();
   }, []);

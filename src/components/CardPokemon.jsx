@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import { Card } from "react-bootstrap";
-import usePokemons from "../services/pokemonListCard";
 import style from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { addToPokedex, removeFromPokedex } from "../reducers/pokedexReducer";

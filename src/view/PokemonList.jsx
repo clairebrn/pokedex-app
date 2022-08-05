@@ -2,13 +2,16 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import style from "../components/PokemonDetail.module.css";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import PokemonDetail from "../services/pokemonDetailPage";
 import SpeciesDetail from "../services/speciesDetailPage";
+import { useSelector, useDispatch } from "react-redux";
+import { addToPokedex, removeFromPokedex } from "../reducers/pokedexReducer";
 
 function PokemonList(props) {
   const { id } = useParams();
   const pokemon = PokemonDetail(id);
+
   const species = SpeciesDetail(id);
 
   let description = "";
@@ -22,6 +25,25 @@ function PokemonList(props) {
 
     description = result.flavor_text;
   }
+
+  let isSelected;
+  const { pokemons } = useSelector((state) => state.pokedex);
+  if (pokemon) {
+    isSelected = pokemons.find(
+      (pokemonElement) => pokemonElement.name === pokemon.name
+    );
+    console.log(isSelected);
+  }
+  const dispatch = useDispatch();
+
+  const onToggleClick = () => {
+    const payload = { pokemon: pokemon };
+    if (isSelected) {
+      dispatch(removeFromPokedex(payload));
+    } else {
+      dispatch(addToPokedex(payload));
+    }
+  };
 
   return (
     <div>
@@ -44,9 +66,9 @@ function PokemonList(props) {
                   />
                 </div>
                 <div>
-                  <Link to={`/pokedex`}>
-                    <button className={style.btn}>Ajouter</button>
-                  </Link>
+                  <button className={style.btn} onClick={onToggleClick}>
+                    {isSelected ? "Supprimer" : "Ajouter"}
+                  </button>
                 </div>
               </div>
             </div>
