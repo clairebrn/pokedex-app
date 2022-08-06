@@ -1,0 +1,63 @@
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: red;
+  padding-top: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.searchBox {
+  /* position: absolute;
+  top: 20%;
+  left: 20%; */
+  transform: translate(-50, -50%);
+  background: yellow;
+  height: 40px;
+  border-radius: 40px;
+  width: 40%;
+}
+.searchBox:hover > .searchText {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchBtn {
+  background: yellow;
+  color: red;
+}
+
+.searchBtn {
+  color: yellow;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid yellow;
+}
+
+.searchText {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: blue;
+  font-size: 18px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+  font-family: "Fredoka One", cursive;
+}
+
+.searchText::placeholder {
+  color: red;
+}

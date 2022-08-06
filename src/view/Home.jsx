@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addAllPokemons } from "../reducers/pokemonReducer";
 import SearchBar from "../components/SearchBar";
 
+// import style from "../components/SearchBar.module.css";
+
 function Home() {
   const [search, setSearch] = useState(null);
 
