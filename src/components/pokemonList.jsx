@@ -5,7 +5,7 @@ import style from "./PokemonList.module.css";
 const PokemonList = ({ pokemonList }) => {
   // console.log(pokemonList);
   return (
-    <div className={style.hello}>
+    <div className={style.pokemonCardStyleBase}>
       {pokemonList &&
         pokemonList.map((pokemon) => (
           <CardPokemon key={pokemon.name} pokemon={pokemon} />

@@ -30,20 +30,22 @@ function CardPokemon({ pokemon }) {
   };
 
   return (
-    //affichage des pokemon sur la page Home
-    <div className={style.styleCard}>
-      <div>
-        <h1>{pokemon.name}</h1>
-      </div>
-      <Link to={`/pokemonList/${getId(pokemon.url)}`}>
+    <div className={style.allcontainer}>
+      {/* //affichage des pokemon sur la page Home */}
+      <div className={style.styleCard}>
         <div>
-          <img src={img} alt={pokemon.name} className={style.imgSize} />
+          <h1>{pokemon.name}</h1>
         </div>
-      </Link>
-      <div className={style.containerBtn}>
-        <button className={style.btn} onClick={onToggleClick}>
-          {isSelected ? "Supprimer" : "Ajouter"}
-        </button>
+        <Link to={`/pokemonList/${getId(pokemon.url)}`}>
+          <div>
+            <img src={img} alt={pokemon.name} className={style.imgSize} />
+          </div>
+        </Link>
+        <div className={style.containerBtn}>
+          <button className={style.btn} onClick={onToggleClick}>
+            {isSelected ? "Supprimer" : "Ajouter"}
+          </button>
+        </div>
       </div>
     </div>
   );

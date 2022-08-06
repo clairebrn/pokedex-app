@@ -1,5 +1,6 @@
-.hello {
+.pokemonCardStyleBase {
   background-color: red;
   display: flex;
   flex-wrap: wrap;
+  height: auto;
 }
