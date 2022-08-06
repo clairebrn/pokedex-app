@@ -60,3 +60,7 @@ html {
   text-shadow: -1px 2px 1px black;
   font-weight: bold;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

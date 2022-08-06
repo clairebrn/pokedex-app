@@ -31,7 +31,6 @@ function CardPokemon({ pokemon }) {
 
   return (
     <div className={style.allcontainer}>
-      {/* //affichage des pokemon sur la page Home */}
       <div className={style.styleCard}>
         <div>
           <h1>{pokemon.name}</h1>
