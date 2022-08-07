@@ -9,8 +9,8 @@ function CollapsibleExample() {
   const { count } = useSelector((state) => state.pokedex);
 
   return (
-    // <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="warning" variant="warning">
+      {/* // <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"> */}
       <Container>
         <NavbarBrand href="/">
           <img
@@ -24,7 +24,6 @@ function CollapsibleExample() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link href="/pokemonList">Pokemon détail</Nav.Link> */}
             <Link to="/pokedex">Pokedex {count}</Link>
           </Nav>
         </Navbar.Collapse>

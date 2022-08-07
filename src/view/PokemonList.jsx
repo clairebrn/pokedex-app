@@ -53,7 +53,7 @@ function PokemonList(props) {
         ) : (
           <div className={style.body}>
             {/* carte profil du pokemon (nom,img, btn) */}
-            <div className={style.sidebar}>
+            <div className={style.sidebarUn}>
               <div className={style.containerPokemon}>
                 <div>
                   <h1>{pokemon.name}</h1>
@@ -72,27 +72,37 @@ function PokemonList(props) {
                 </div>
               </div>
             </div>
-            {/* descritpion du pokemon */}
+            {/* description du pokemon */}
 
             <div className={style.flex}>
-              <div className={style.content}>
+              <div className={style.description}>
                 <p>{description}</p>
               </div>
               <div className={style.content}>
                 <p>
                   {pokemon.types.map((type) => {
-                    return <p key={type.type.name}>Type : {type.type.name}</p>;
+                    return (
+                      <p key={type.type.name}>
+                        <span>Type :</span> {type.type.name}
+                      </p>
+                    );
                   })}
                 </p>
-                <p>Poids : {pokemon.weight}</p>
-                <p>taille : {pokemon.height}</p>
+                <p>
+                  <span>Weight :</span> {pokemon.weight}
+                </p>
+                <p>
+                  {" "}
+                  <span>Height :</span> {pokemon.height}
+                </p>
               </div>
               <div className={style.content}>
                 <p>
                   {pokemon.abilities.map((ability) => {
                     return (
                       <p key={ability.ability.name}>
-                        Capacité : {ability.ability.name}
+                        <span>Capacité :</span>
+                        {ability.ability.name}
                       </p>
                     );
                   })}
@@ -101,7 +111,9 @@ function PokemonList(props) {
             </div>
 
             <div className={style.content}>
-              <p>Caractéristiques : </p>
+              <p>
+                <span>Caractéristiques :</span>{" "}
+              </p>
               {pokemon.stats.map((stat) => {
                 return (
                   <p key={stat.stat.name}>
@@ -110,8 +122,6 @@ function PokemonList(props) {
                 );
               })}
             </div>
-
-            {/* fin du body */}
           </div>
         )}
       </div>

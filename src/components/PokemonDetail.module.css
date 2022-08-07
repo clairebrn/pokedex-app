@@ -16,7 +16,7 @@
 }
 
 .containerPokemon img {
-  flex-basis: 50%;
+  flex-basis: 30%;
 }
 .containerPokemon h1 {
   text-transform: uppercase;
@@ -27,8 +27,31 @@
 .containerPokemon h1:hover {
   text-shadow: -1px 5px 1px black;
 }
+.sidebarUn {
+  width: 30%;
+  background-color: red;
+  border-radius: 10px;
+  border: 2px solid yellow;
+  box-shadow: -1px 5px 4px black;
+  margin: 10px;
+  padding: 20px;
+}
+.sidebarUn:hover {
+  box-shadow: -5px 8px 4px black;
+}
 
-.sidebar,
+.description {
+  background-color: yellow;
+  color: red;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  padding: 10px;
+}
+
 .content {
   margin: 10px;
   padding: 20px;
@@ -38,22 +61,23 @@
   border-radius: 10px;
   border: 2px solid yellow;
   box-shadow: -1px 5px 4px black;
-  /* opacity: 1; */
+  width: 30%;
 }
 .sidebar:hover,
-.content:hover {
+.content:hover,
+.description:hover {
   box-shadow: -5px 8px 4px black;
 }
 
 .sidebar {
   flex-basis: 55%;
 }
-/* .sidebar:hover,
-.content:hover {
-  opacity: 0.8;
-} */
 
-/* détails */
+.content span {
+  font-family: "Fredoka One", cursive;
+  font-size: 18px;
+}
+
 .flex {
   display: flex;
   flex-direction: column;
@@ -67,8 +91,6 @@
   font-size: 12px;
   height: 10%;
   color: yellow;
-  /* display: flex;
-  justify-content: space-around; */
   width: auto;
 }
 
@@ -104,8 +126,15 @@
     flex-basis: 100%;
     /* order: 2; */
   }
+  .imgSize {
+    max-width: 80px;
+  }
+
   .sidebar {
     flex-basis: 100%;
     order: 1;
+  }
+  .imgSize {
+    max-width: 80px;
   }
 }

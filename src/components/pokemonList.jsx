@@ -3,7 +3,6 @@ import CardPokemon from "./CardPokemon";
 import style from "./PokemonList.module.css";
 
 const PokemonList = ({ pokemonList }) => {
-  // console.log(pokemonList);
   return (
     <div className={style.pokemonCardStyleBase}>
       {pokemonList &&
